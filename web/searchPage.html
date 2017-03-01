@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+    <link rel="stylesheet"  type="text/css" href="css/main.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/common.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/searchPage.css"/>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/searchPage.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("commonLayouts/header.html"); 
+            $("#footer").load("commonLayouts/footer.html");
+            $(".mainNavigation").load("commonLayouts/mainNavigation.html");
+        });
+    </script>
+</head>
+<body>
+    <header id="header"></header>
+    <div id="loader"></div>
+    <div class = "container">
+        <div class="mainCentar">
+            <div class="mainNavigation"></div>
+            <form id="searchForm">
+                <table>
+                    <tr>
+                        <td>
+                            <input id="titleCB" type="checkbox" name="typeOf" value="title"> Title :
+                            <input type="text" id="titleForSearch"> 
+                        </td>
+                        <td>
+                            <select id="titleST">
+                                <option value="Regular">Regular</option>
+                                <option value="Fuzzy">Fuzzy</option>
+                                <option value="Phraze">Phraze</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id = "titleSC">
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value=" "> </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="authorCB" type="checkbox" name="typeOf" value="author" > Author:
+                            <input type="text" id="authorForSearch"> 
+                        </td>
+                        <td>
+                            <select id="authorST">
+                                <option value="Regular">Regular</option>
+                                <option value="Fuzzy">Fuzzy</option>
+                                <option value="Phraze">Phraze</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id = "authorSC">
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value=" "> </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="keywordCB" type="checkbox" name="typeOf" value="keywords" > Keywords:
+                            <input type="text" id="keywordForSearch">
+                        </td>
+                        <td>
+                            <select id="keywordST">
+                                <option value="Regular">Regular</option>
+                                <option value="Fuzzy">Fuzzy</option>
+                                <option value="Phraze">Phraze</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id = "keywordSC">
+                                <option>+</option>
+                                <option>-</option>
+                                <option> </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="contentCB" type="checkbox" name="typeOf" value="text" > Content:
+                            <input type="text" id="contentForSearch">  
+                        </td>
+                        <td>
+                            <select id="contentST">
+                                <option value="Regular">Regular</option>
+                                <option value="Fuzzy">Fuzzy</option>
+                                <option value="Phraze">Phraze</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id = "contentSC">
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value=" "> </option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input id="languageCB" type="checkbox" name="typeOf" value="language" > Language:
+                            <input type="text" id="languageForSearch">
+                        </td>
+                        <td>
+                            <select id="languageST">
+                                <option value="Regular">Regular</option>
+                                <option value="Fuzzy">Fuzzy</option>
+                                <option value="Phraze">Phraze</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id = "languageSC">
+                                <option value="+">+</option>
+                                <option value="-">-</option>
+                                <option value=" "> </option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <button id="buttonSearch" type="button" value="Submit">Search</button>
+            </form>
+            <div class ="eBookSearchResult" id="eBookSearchResult">
+            
+            </div>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+</body>
+</html>

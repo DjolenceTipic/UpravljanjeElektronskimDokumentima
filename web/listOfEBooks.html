@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>E-Books</title>
+    <link rel="stylesheet"  type="text/css" href="css/main.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/common.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/listOfEBooks.css"/>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/listOfEBooks.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("commonLayouts/header.html"); 
+            $("#footer").load("commonLayouts/footer.html");
+            $(".mainNavigation").load("commonLayouts/mainNavigation.html");
+        });
+    </script>
+</head>
+<body>
+    <header id="header"></header>
+    <div id="loader"></div>
+    <div class = "container">
+        <div class="mainCentar">
+            <div class="mainNavigation"></div>
+            <div class="headerOfCategory">
+                <p class="titleOfCategory ">List of eBooks</p>
+                <button id="myBtn" class="buttonInTitleBar">Add new eBook</button>
+                <!-- The Modal -->
+                 <div id="myModal" class="modal">
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Please enter language name:</p>
+                        <form id="eBookCrud" enctype="multipart/form-data">
+                            <table id="addTable">
+                                <tr>
+                                    <input type="file"/>
+                                    <td><button type="button" value="ADD" id="uploadSubmit">Upload</button></td>
+                                </tr>
+                             </table>
+                        </form>
+                        <form>
+                            <table id="notVisible">
+                                <tr>
+                                    <td align="right">Title:</td>
+                                    <td>
+                                        <input value="" type="text" name="titleOfEBook" id="titleOfEBook"/>
+                                    </td>
+                                    <td>
+                                        <input name="fileName" id="fileName" hidden="hidden"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Author name:</td>
+                                    <td>
+                                        <input value="" type="text" name="authorOfEBook" id="authorOfEBook"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Enter keywords:</td>
+                                    <td>
+                                        <input value="" type="text" name="keywordsOfEBook" id="keywordsOfEBook"/>
+                                    </td>
+                                    <td><button type="button" id="addKeyword">Add keyword</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Keywords: </td>
+                                    <td id="keywordsForList"></td>
+                                </tr>
+                                <tr>
+                                    <td>Publication year</td>
+                                    <td><input value="" type="text" name="publicationYearOfEBook" id="publicationYearOfEBook"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Language</td>
+                                    <td><select id="languageSelectForEBook">
+                                        <option>Select language</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Category</td>
+                                    <td>
+                                        <select id="categorySelectForEBook">
+                                            <option>Select category</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" value="ADD" id="addSubmit">Add EBook</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                 <div id="myModalUpdate" class="modal">
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Enter ebook data's:</p>
+                        <form>
+                            <table>
+                                <tr>
+                                    <td align="right">Title:</td>
+                                    <td>
+                                        <input value="" type="text" name="idOfEBookUpdate" id="idOfEBookUpdate" hidden="hidden"/>
+                                    </td>
+                                    <td>
+                                        <input value="" type="text" name="titleOfEBookUpdate" id="titleOfEBookUpdate"/>
+                                    </td>
+                                    <td>
+                                        <input name="fileNameUpdate" id="fileNameUpdate" hidden="hidden"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Author name:</td>
+                                    <td>
+                                        <input value="" type="text" name="authorOfEBookUpdate" id="authorOfEBookUpdate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Enter keywords:</td>
+                                    <td>
+                                        <input value="" type="text" name="keywordsOfEBookUpdate" id="keywordsOfEBookUpdate"/>
+                                    </td>
+                                    <td><button type="button" id="addKeywordUpdate">Add keyword</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Keywords: </td>
+                                    <td id="keywordsForListUpdate"></td>
+                                </tr>
+                                <tr>
+                                    <td>Publication year</td>
+                                    <td><input value="" type="text" name="publicationYearOfEBookUpdate" id="publicationYearOfEBookUpdate"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Language</td>
+                                    <td><select id="languageSelectForEBookUpdate">
+                                        <option>Select language</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td>Category</td>
+                                    <td>
+                                        <select id="categorySelectForEBookUpdate">
+                                            <option>Select category</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <button type="button" value="ADD" id="updateSubmit">Update EBook</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>    
+            <div id="tablesAndOtherDatas">
+                <table class="eBookTable" id="eBookTable">
+                   <tr>
+                        <th>#</th>
+                        <th>Naziv</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+</body>
+</html>

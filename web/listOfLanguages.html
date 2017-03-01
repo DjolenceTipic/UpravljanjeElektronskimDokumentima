@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <link rel="stylesheet"  type="text/css" href="css/main.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/listOfLanguanges.css"/>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/listOfLanguages.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("commonLayouts/header.html"); 
+            $("#footer").load("commonLayouts/footer.html");
+            $(".mainNavigation").load("commonLayouts/mainNavigation.html");
+        });
+    </script>
+</head>
+<body>
+    <header id="header"></header>
+    <div id="loader"></div>
+    <div class = "container">
+        <div class="mainCentar">
+            <div class="mainNavigation">
+            </div>
+            <div class="headerOfCategory">
+                <p class="titleOfCategory ">Languages of books</p>
+                <button id="myBtn" class="buttonInTitleBar">Add new language</button>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Please enter language name:</p>
+                        <form id="catCrud">
+                            <table id="addTable">
+                                <tr>
+                                    <td align="right">Name:</td>
+                                    <td hidden="hidden">
+                                        <input value="" type="text" name="id" id="id"/>
+                                    </td>
+                                    <td>
+                                        <input value="" type="text" name="name" id="name"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <button id="languageSubmit" >ADD</button>
+                    </div>
+                </div>
+                <div id="myModalUpdate" class="modal">
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Please enter language name:</p>
+                        <form id="catCrud">
+                            <table id="addTable">
+                                <tr>
+                                    <td align="right">Name:</td>
+                                    <td hidden="hidden">
+                                        <input value="" type="text" name="id" id="idUpdate"/>
+                                    </td>
+                                    <td>
+                                        <input value="" type="text" name="name" id="nameUpdate"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <button id="languageSubmitUpdate" >Edit</button>
+                    </div>
+                </div>
+            </div>
+            <div id="tablesAndOtherDatas">
+                <table class="languageTable" id="languageTable">
+                   <tr>
+                        <th>#</th>
+                        <th>Naziv</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+</body>
+</html>

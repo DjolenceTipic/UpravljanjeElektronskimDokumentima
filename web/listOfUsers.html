@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+    <link rel="stylesheet"  type="text/css" href="css/main.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/common.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/listOfUsers.css"/>
+    <script type="text/javascript"  src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript"  src="js/common.js"></script>
+    <script type="text/javascript"  src="js/listOfUsers.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("commonLayouts/header.html"); 
+            $("#footer").load("commonLayouts/footer.html");
+            $(".mainNavigation").load("commonLayouts/mainNavigation.html");
+        });
+    </script>
+</head>
+<body>
+    <header id="header"></header>
+    <div id="loader"></div>
+    <div class = "container">
+        <div class="mainCentar">
+            <div class="mainNavigation">
+            </div>
+            <div class="headerOfCategory">
+                <p class="titleOfCategory ">Users</p>
+                <!--<button id="myBtn" class="buttonInTitleBar">Change password</button>*/-->
+                <!-- The Modal -->
+                <div id="myModalPassword" class="modal">
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Please enter new password:</p>
+                        <form id="passChange">
+                            <table id="changePassTable">
+                                <tr>
+                                    <td align="right">New password:</td>
+                                    <td hidden="hidden">
+                                        <input value="" type="text" name="id" id="idOfUser"/>
+                                    </td>
+                                    <td>
+                                        <input value="" type="password" name="passwordChange" id="passwordChange"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Repeat password:</td>
+                                    <td>
+                                        <input value="" type="password" name="passwordChangeRepeat" id="passwordChangeRepeat"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <button id="passwordChangeSubmit" >Change password</button>
+                    </div>
+                </div>
+                <div id="myModalUpdate" class="modal">
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Please enter user's data:</p>
+                        <form id="userCrud">
+                            <table id="userCrudTable">
+                                <tr>
+                                    <td align="right">First name:</td>
+                                    <td hidden="hidden">
+                                        <input value="" type="text" name="id" id="idUpdate"/>
+                                    </td>
+                                    <td>
+                                        <input value="" type="text" name="firstName" id="firstNameUpdate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Last name:</td>
+                                    <td>
+                                        <input value="" type="text" name="lastName" id="lastNameUpdate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Username:</td>
+                                    <td>
+                                        <input readonly="readonly" value="" type="text" name="username" id="usernameUpdate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Type of user:</td>
+                                    <td>
+                                        <select id="roleOfUpdatedUser">
+                                          <option id="optionAdmin" value="0">Admin</option>
+                                          <option id="oprionSubscriber" value="1">Subscriber</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Category to subscribe:</td>
+                                    <td>
+                                        <select id="categoryForSubscribe">
+                                          <option id="optionAll" value="all">All categories</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <button id="userSubmitUpdate" >Edit</button>
+                    </div>
+                </div>
+            </div>
+            <div id="tablesAndOtherDatas">
+                <table class="usersTable" id="usersTable">
+                   <tr>
+                        <th>#</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>User name</th>
+                        <th>Subscribe</th>
+                        <th>Role</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer id="footer"></footer>
+</body>
+</html>

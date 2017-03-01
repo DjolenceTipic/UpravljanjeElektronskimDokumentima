@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Main!</title>
+    <link rel="stylesheet"  type="text/css" href="css/main.css"/>
+    <link rel="stylesheet"  type="text/css" href="css/common.css"/>
+    <script type="text/javascript"  src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript"  src="js/common.js"></script>
+    <script type="text/javascript"  src="js/main.js"></script>
+    <script>
+        $(function(){
+            $("#header").load("commonLayouts/header.html"); 
+            $("#footer").load("commonLayouts/footer.html");
+            $(".mainNavigation").load("commonLayouts/mainNavigation.html");
+        });
+    </script>
+</head>
+<body>
+<header id="header"></header>
+    <div id="loader"></div>
+    <div class = "container">
+        <div class="mainCentar">
+            <div class="mainNavigation"></div>
+        </div>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

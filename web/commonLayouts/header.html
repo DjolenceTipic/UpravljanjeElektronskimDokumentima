@@ -1,0 +1,146 @@
+<!DOCTYPE html><head>
+<meta charset="ISO-8859-1">
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+</head>
+<header>
+    <div class="socialNet">
+        <ul class="links">
+            <li id="face" class="socPic">
+                <a href="#">
+                <img src="img/icon/face.png" title="Nadjite nas na fejsu!"/></a>
+            </li>
+            <li id="g" class="socPic">
+                <a  href="#">
+                    <img src="img/icon/g32.png" title="Nadjite nas na g+!"/>
+                </a>
+            </li>
+            <li id="tw" class="socPic">
+                <a  href="#">
+                <img src="img/icon/t32.png" title="Nadjite nas na tviteru!"/>
+                </a>
+            </li>
+            <li id="yt" class="socPic">
+                <a  href="#">
+                    <img src="img/icon/yt32.png" title="Nadjite nas na jutubu!"/>
+                </a>
+            </li>
+            <li id="sk" class="socPic"><a  href="#">
+                <img src="img/icon/Skype-01-32.png" title="Nadjite nas na skajpu!"/>
+                </a>
+            </li>
+            <li id="cu" class="socPic">
+                <a  href="#">
+                    <img src="img/icon/Contact-32.png" title="Pozovite korisnicki servis!"/>
+                </a>
+            </li>
+            <li id="me" class="socPic">
+                <a  href="#">
+                    <img src="img/icon/Message-Mail-32.png" title="Pisite nam sugestije, kritike i poneku pohvalu!"/>
+                </a>
+            </li>
+        </ul>
+        <ul class="time">
+            <div id="clockDiv"></div>    
+        </ul>
+        <ul class="Login">
+            <button id="loginButton">LogIn</button>
+            <div id="myModalLogIn" class="modal">
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close" id="loginClose">&times;</span>
+                        <p>Welcome back:</p>
+                        <form id="loginForm">
+                            <table id="loginFormTable">
+                                <tr>
+                                    <td align="right">Username:</td>
+                                    <td>
+                                        <input value="" type="text" name="usernameLogin" id="usernameLogin"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Password:</td>
+                                    <td>
+                                        <input value="" type="password" name="passwordLogin" id="passwordLogin"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <button  id="loginSubmit" >Login</button>
+                    </div>
+                </div>
+        </ul>
+        <ul class="Login">
+            <button id="singinButton">SingIn</button>
+            <div id="myModalSingIn" class="modal">
+                <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close" id="singinClose">&times;</span>
+                        <p>Please enter user's data:</p>
+                        <form id="userCrud">
+                            <table id="userCrudTable">
+                                <tr>
+                                    <td align="right">First name:</td>
+                                    <td>
+                                        <input value="" type="text" name="firstName" id="firstNameCrud"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Last name:</td>
+                                    <td>
+                                        <input value="" type="text" name="lastName" id="lastNameCrud"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Username:</td>
+                                    <td>
+                                        <input value="" type="text" name="username" id="usernameCrud" onblur="checkUserName(this.value)"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Password:</td>
+                                    <td>
+                                        <input value="" type="password" name="username" id="passwordCrud"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Repeat password:</td>
+                                    <td>
+                                        <input value="" type="password" name="username" id="passwordCrudRepeat" onblur="checkPass(this);"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">Type of user:</td>
+                                    <td>
+                                        <form action="">
+                                          <input type="radio" name="typeOfUser" value="0" onclick="
+        var trForSelect = document.getElementById('trForCategory');
+        trForSelect.style.display='none'"> Admin<br>
+                                          <input type="radio" name="typeOfUser" value="1" onclick="
+        var trForSelect = document.getElementById('trForCategory');
+        trForSelect.style.display='table-row'"> Subscriber
+                                        </form>
+                                    </td>
+                                </tr>
+                                <tr id="trForCategory">
+                                    <td align="right">Category to subscribe:</td>
+                                    <td>
+                                        <select id="categoryToSubscribe">
+                                          <option id="optionAll" value="all">All categories</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <button type="button" id="userCrudButton"  onclick="crudUser();">OK!</button>
+                    </div>
+                </div>
+            </ul>
+        <ul class="LogOut">
+            <button type="button" id="userLogOut">LogOut</button>
+        </ul> 
+        <ul class="Details">
+        </ul>
+    <!--socialNet-->	
+    </div>
+</header>
